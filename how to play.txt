@@ -1,0 +1,19 @@
+How to play:
+Sudoku is a puzzle that is played on a 9x9 grid where you use a number between 1 and 9 and fill each row, column, and 3x3 grid with those numbers. The catch is that there can be no repeating numbers within each respective area. Navigate the 9x9 grid by either clicking on the gray tiles or by using the arrow keys on your keyboard. 
+
+Notes button:
+Clicking the Notes button while in game will allow you to switch between inserting the number you believe goes in that spot (the default) and putting mini numbers in the square which indicate the numbers you think might go into that tile.
+
+Generate button:
+If you would like to try a different puzzle, click on this button twice to reset the game and give you a new board to play.
+
+Solution button:
+If you believe you have the right solution, or want to give up, click this button and the program will detect if you have the right answer.
+
+Won:
+If you found the solution, you will be taken to the winning page and given the option to play again or to quit.
+
+Lost:
+If your solution was incorrect, you will be taken to the "Game Over" page and from there you will have four options: Continue playing with the same board, see the correct answer for the board you were playing on, play the game again, or quit.
+
+Enjoy!
