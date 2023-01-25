@@ -596,9 +596,11 @@ def continue_board():
 
 def show_answer():
     tile_generator = generate_playing_board_from_user()
+    count = 0
     while 1:
         for event in pygame.event.get():
             for row in range(9):
+                count += 1
                 for index in range(9):
                     current_tile = next(tile_generator)
                     if current_tile.is_permanent():
@@ -613,7 +615,7 @@ def show_answer():
                     h = current_tile.get_height_coords()
                     pygame.display.update([w[0], h[0], w[1], h[1]])
                     pygame.time.delay(150)
-            if row == 8:
+            if count == 9:
                 return
 
             if event.type == pygame.QUIT:
@@ -634,20 +636,9 @@ def wait_for_click():
                 exit()
 
 
-if __name__ == '__main__':
-    pygame.init()
-    WIDTH = 568
-    HEIGHT = 668
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("Sudoku")
-    screen.fill((228, 228, 228))
-    users_solution = []
-    board_solution = []
-    playing_board = opening_page()
 
-    tiles = init_game()
+def decision_loop():
     user_selection, prev_seconds = main_loop()
-
     while True:
         if user_selection == "see answer":
             continue_board()
@@ -668,3 +659,17 @@ if __name__ == '__main__':
         if user_selection == "quit":
             pygame.quit()
             exit()
+
+
+if __name__ == '__main__':
+    pygame.init()
+    WIDTH = 568
+    HEIGHT = 668
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("Sudoku")
+    screen.fill((228, 228, 228))
+    users_solution = []
+    board_solution = []
+    playing_board = opening_page()
+    tiles = init_game()
+    decision_loop()
